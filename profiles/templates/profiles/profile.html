@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}" />
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -17,20 +18,18 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr />
+            <hr>
             <h2 class="logo-font mb-4">My Profile</h2>
-            <hr />
+            <hr>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-lg-6">
             <p class="text-muted">Default Delivery Information</p>
-            <form action="{% url 'profile' %}" action="POST" id="profile-update-form" class="mt-3">
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-black rounded-0 text-uppercase float-right">
-                    Update Information
-                </button>
+                <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
             </form>
         </div>
         <div class="col-12 col-lg-6">
@@ -38,8 +37,9 @@
             {{ orders }}
         </div>
     </div>
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
-    <script type="test/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
-{% endblock %}
+    {% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    {% endblock %}
