@@ -29,7 +29,7 @@ SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'boutique-ado-jelle.herokuapp.com',
+    'boutique-ado-jelle-28da38aa0012.herokuapp.com',
     '8000-simonjellvert-boutique-a-6kjumpdzlj.us2.codeanyapp.com',
 ]
 
